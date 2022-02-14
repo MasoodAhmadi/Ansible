@@ -1,0 +1,28 @@
+---
+- name: Install Apache
+  package:
+    name: "{{ apache }}"
+    update_cache: yes
+    state: latest
+
+- name: enabled mod_rewrite
+  apache2_module:
+    name: rewrite
+    state: present
+  when: ansible_distribution == "Ubuntu"
+
+- name: install python sql
+  apt:
+    name: python3-mysqldb
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
+- name: restart apache
+  service:
+    name: "{{ apache }}"
+    state: restarted
+  when: ansible_distribution == "Ubuntu"
+
+
+
+

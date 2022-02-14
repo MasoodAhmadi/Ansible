@@ -1,0 +1,38 @@
+---
+- name: Create director
+  file:
+     path="/var/www/example.com/{{ htmldirectory }}"
+      state=directory
+      owner=root
+      group=root
+      mode=0755
+  register: apache_document_root
+
+- name: Copy index test page
+  template:
+        src: "{{ hosthtmlfile }}"
+        dest: "/var/www/example.com/{{ htmldirectory }}/"
+  
+- name: Set up Apache virtuahHost
+  template:
+        src: "example.com.conf"
+        dest: "{{ apachedest }}/{{ httpd_conf }}"
+  
+- name: Setup connection with example file
+  file: 
+     src: "{{ apachedest }}/{{ httpd_conf }}"
+     dest: "/etc/{{ apache }}/sites-enabled/{{ httpd_conf }}"
+     state: link
+  when: ansible_distribution == "Ubuntu"
+
+- name: disconnection default connection
+  file:
+     path: "/etc/{{ apache }}/sites-enabled/{{ default_conf }}"
+     state: absent
+  when: ansible_distribution == "Ubuntu"
+
+- name: Restart Apache
+  service:
+     name: "{{ apache }}"
+     state: restarted
+

@@ -1,0 +1,7 @@
+---
+- name: Change image version in docker-compose.yml
+  ansible.builtin.replace:
+    path: /etc/opt/docker-compose.yml
+    regexp: "{{ fromthisnumber }}"
+    replace: "{{ tothisnumber }}"
+    backup: "{{ backup_properties_files | default(false) }}"

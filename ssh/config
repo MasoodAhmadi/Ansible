@@ -1,0 +1,19 @@
+Host targetserver5-centos 
+   HostName 192.168.100.12
+   Port 22
+   IdentityFile ~/.ssh/id_rsa
+   User root
+   StrictHostKeyChecking no
+   UserKnownHostsFile /dev/null
+   #poxyJump 123.123.123.12
+
+
+#ubuntu
+Host targetserver4-ubuntu
+   HostName 192.168.100.8
+   Port 22
+   IdentityFile ~/.ssh/id_rsa
+   User root
+   StrictHostKeyChecking no
+   UserKnownHostsFile /dev/null
+   #poxyJump 123.123.123.12

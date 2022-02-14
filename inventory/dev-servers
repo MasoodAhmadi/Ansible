@@ -1,0 +1,5 @@
+targetserver5-centos deployment_environment=Centos
+#targetserver1-rocky
+#targetserver2-ubuntu
+#targetserver3-kubuntu
+targetserver4-ubuntu deployment_environment=Ubuntu

@@ -1,0 +1,7 @@
+---
+
+logdirectory: "/var/log/httpd"
+httpd_conf: "example.com.conf"
+default_conf: "000-default.conf"
+apache: "httpd"
+apachedest: "/etc/httpd/conf.d"

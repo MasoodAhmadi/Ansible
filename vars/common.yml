@@ -1,0 +1,12 @@
+---
+
+fromthisnumber: "0.0.5"
+tothisnumber: "0.0.6"
+htmldirectory: "public_html"
+hosthtmlfile: "/var/www/example.com/public_html/index.html"
+configutationtemplate: "/home/hostmachine/ansible/roles/Ubuntu-Host/templates/example.com.conf"
+#docker variables
+create_containers: 4
+default_container_name: docker
+default_container_image: ubuntu
+default_container_command: sleep 1d
