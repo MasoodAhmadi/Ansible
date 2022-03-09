@@ -1,4 +1,4 @@
-targetserver-Kubuntu deployment_environment=Ubuntu
+#targetserver-Kubuntu deployment_environment=Ubuntu
 
 #targetserver-Centos deployment_environment=Centos
 

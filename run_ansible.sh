@@ -2,8 +2,8 @@
 
 ansible-playbook\
   --ssh-common-args\
-  '-F config'\
+  '-F ssh/config'\
   -i inventory\
    --extra-vars='{"deployment_environment":"Ubuntu"}'\
-   --vault-password-file ./myfile.txt\
+   --vault-password-file=vault_pass.txt\
    apache-installation.yml

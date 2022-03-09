@@ -6,7 +6,7 @@
   vars_files:
     - vars/common.yml
     - vars/{{ deployment_environment }}/ansible.yml
-#    - vars/secrets.yml
+    - vars/jannaten
 
 
   roles:
