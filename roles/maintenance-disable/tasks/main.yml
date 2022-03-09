@@ -1,0 +1,6 @@
+---
+- name: Apache is reloading with restarting
+  service:
+    name: "{{ apache }}"
+    state: restarted
+  when: ansible_distribution =="Ubuntu" 

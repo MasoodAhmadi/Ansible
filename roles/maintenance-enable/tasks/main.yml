@@ -1,0 +1,12 @@
+---
+- name: copy maintenance
+  template:
+    src: "index.html"
+    dest: "{{ httpd_www_dir }}/{{ htmldirectory }}/"
+
+#- name: Replace {{ httpd_www_dir }}/maintenance.html
+# shell: cp -f "/var/www/example.com/public_html/index.html" "{{ httpd_www_dir }}/{{ htmldirectory }}/index.html"
+
+
+- name: Reload apache to enable maintenance break.
+  shell: sh -c "systemctl reload {{ apache }}"

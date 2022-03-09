@@ -10,7 +10,7 @@
 
 - name: Copy index test page
   template:
-        src: "{{ hosthtmlfile }}"
+        src: index.html
         dest: "/var/www/example.com/{{ htmldirectory }}/"
   
 - name: Set up Apache virtuahHost

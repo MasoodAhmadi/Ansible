@@ -1,0 +1,10 @@
+---
+- hosts: targetserver3-kubuntu
+  become: true
+
+  - name: Create a data container
+    community.docker.docker_container:
+       name: mydata
+       image: busybox
+       volumes:
+         - /data

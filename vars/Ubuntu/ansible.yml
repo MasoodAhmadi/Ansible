@@ -2,6 +2,7 @@
 
 logdirectory: "${APACHE_LOG_DIR}"
 httpd_conf: "example.com.conf"
+apache_www_dir: ""
 default_conf: "000-default.conf"
 apache: "apache2"
 apachedest: "/etc/apache2/sites-available"

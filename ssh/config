@@ -1,5 +1,5 @@
-Host targetserver5-centos 
-   HostName 192.168.100.12
+Host targetserver-Kubuntu 
+   HostName 192.168.100.7
    Port 22
    IdentityFile ~/.ssh/id_rsa
    User root
@@ -9,11 +9,21 @@ Host targetserver5-centos
 
 
 #ubuntu
-Host targetserver4-ubuntu
-   HostName 192.168.100.8
+Host targetserver-Centos
+   HostName 192.168.100.12
    Port 22
    IdentityFile ~/.ssh/id_rsa
    User root
+   StrictHostKeyChecking no
+   UserKnownHostsFile /dev/null
+   #poxyJump 123.123.123.12
+
+#ubuntu
+Host targetserver-test
+   HostName 192.168.100.14
+   Port 22
+   IdentityFile ~/.ssh/id_rsa
+   User test
    StrictHostKeyChecking no
    UserKnownHostsFile /dev/null
    #poxyJump 123.123.123.12
